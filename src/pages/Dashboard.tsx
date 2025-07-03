@@ -7,14 +7,16 @@ import { Plus, Search, Filter, Bell, Settings, CheckSquare } from "lucide-react"
 import { TaskList } from "@/components/TaskList";
 import { CreateTaskDialog } from "@/components/CreateTaskDialog";
 import { Sidebar } from "@/components/Sidebar";
+import { BackgroundAnimations } from "@/components/BackgroundAnimations";
 
 const Dashboard = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="flex">
+    <div className="min-h-screen bg-background relative">
+      <BackgroundAnimations />
+      <div className="flex relative z-10">
         {/* Sidebar */}
         <Sidebar />
 
@@ -36,13 +38,13 @@ const Dashboard = () => {
                     className="pl-10 w-64 bg-background border-border"
                   />
                 </div>
-                <Button variant="outline" size="icon" className="hover:bg-secondary/20">
+                <Button variant="outline" size="icon" className="hover:bg-secondary/20" onClick={() => console.log('Filter clicked')}>
                   <Filter className="h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="icon" className="hover:bg-secondary/20">
+                <Button variant="outline" size="icon" className="hover:bg-secondary/20" onClick={() => window.location.href = '/notifications'}>
                   <Bell className="h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="icon" className="hover:bg-secondary/20">
+                <Button variant="outline" size="icon" className="hover:bg-secondary/20" onClick={() => window.location.href = '/settings'}>
                   <Settings className="h-4 w-4" />
                 </Button>
               </div>

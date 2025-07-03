@@ -10,6 +10,7 @@ import { useState } from "react";
 
 const MyTasks = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
 
   const taskStats = {
     total: 24,
@@ -32,12 +33,13 @@ const MyTasks = () => {
               </h1>
               <p className="text-secondary mt-1">Stay organized and productive</p>
             </div>
-            <CreateTaskDialog>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground hover-lift">
-                <Plus className="h-4 w-4 mr-2" />
-                New Task
-              </Button>
-            </CreateTaskDialog>
+            <Button 
+              onClick={() => setIsCreateDialogOpen(true)}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground hover-lift"
+            >
+              <Plus className="h-4 w-4 mr-2" />
+              New Task
+            </Button>
           </div>
 
           {/* Task Statistics */}
@@ -99,10 +101,15 @@ const MyTasks = () => {
 
           {/* Task List */}
           <div className="animate-slide-in" style={{ animationDelay: "0.3s" }}>
-            <TaskList />
+            <TaskList searchQuery={searchQuery} />
           </div>
         </div>
       </main>
+
+      <CreateTaskDialog 
+        open={isCreateDialogOpen} 
+        onOpenChange={setIsCreateDialogOpen} 
+      />
     </div>
   );
 };

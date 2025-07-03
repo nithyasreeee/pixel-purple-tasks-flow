@@ -2,12 +2,15 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CheckSquare, Users, Calendar, BarChart3 } from "lucide-react";
+import { BackgroundAnimations } from "@/components/BackgroundAnimations";
+import heroWorkspace from "@/assets/hero-workspace.jpg";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background animate-fade-in">
+    <div className="min-h-screen bg-background animate-fade-in relative">
+      <BackgroundAnimations />
       {/* Header */}
-      <header className="bg-card shadow-sm border-b border-border">
+      <header className="bg-card shadow-sm border-b border-border relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2 animate-slide-in">
@@ -31,8 +34,15 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="text-center animate-fade-in">
+          <div className="mb-8 animate-scale-in">
+            <img 
+              src={heroWorkspace} 
+              alt="Modern workspace" 
+              className="w-full max-w-lg mx-auto rounded-lg shadow-lg hover-lift"
+            />
+          </div>
           <h1 className="text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
             Organize Your Tasks
             <span className="block text-primary">Beautifully</span>
