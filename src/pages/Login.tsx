@@ -36,20 +36,20 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4 animate-fade-in">
       <div className="w-full max-w-md">
         {/* Logo */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 animate-slide-in">
           <Link to="/" className="inline-flex items-center space-x-2">
-            <CheckSquare className="h-8 w-8 text-purple-600" />
-            <span className="text-2xl font-bold text-purple-900">Purple Pixel Planner</span>
+            <CheckSquare className="h-8 w-8 text-primary" />
+            <span className="text-2xl font-bold text-foreground">Purple Pixel Planner</span>
           </Link>
         </div>
 
-        <Card className="border-purple-200 shadow-lg">
+        <Card className="border-border shadow-lg hover-lift animate-scale-in">
           <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl text-center text-purple-900">Welcome back</CardTitle>
-            <CardDescription className="text-center text-purple-600">
+            <CardTitle className="text-2xl text-center text-foreground">Welcome back</CardTitle>
+            <CardDescription className="text-center text-secondary">
               Sign in to your account to continue
             </CardDescription>
           </CardHeader>
@@ -58,7 +58,7 @@ const Login = () => {
             <div className="space-y-3">
               <Button
                 variant="outline"
-                className="w-full border-purple-200 hover:bg-purple-50"
+                className="w-full border-border hover:bg-primary/20"
                 onClick={() => handleOAuthLogin('google')}
               >
                 <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@ const Login = () => {
               
               <Button
                 variant="outline"
-                className="w-full border-purple-200 hover:bg-purple-50"
+                className="w-full border-border hover:bg-secondary/20"
                 onClick={() => handleOAuthLogin('github')}
               >
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -84,49 +84,49 @@ const Login = () => {
 
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t border-purple-200" />
+                <span className="w-full border-t border-border" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-white px-2 text-purple-600">Or continue with email</span>
+                <span className="bg-card px-2 text-secondary">Or continue with email</span>
               </div>
             </div>
 
             {/* Email/Password Form */}
             <form onSubmit={handleEmailLogin} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-purple-900">Email</Label>
+                <Label htmlFor="email" className="text-foreground">Email</Label>
                 <Input
                   id="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="border-purple-200 focus:border-purple-400"
+                  className="border-border focus:border-primary bg-background"
                   required
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="password" className="text-purple-900">Password</Label>
+                <Label htmlFor="password" className="text-foreground">Password</Label>
                 <Input
                   id="password"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="border-purple-200 focus:border-purple-400"
+                  className="border-border focus:border-primary bg-background"
                   required
                 />
               </div>
               <Button 
                 type="submit" 
-                className="w-full bg-purple-600 hover:bg-purple-700"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                 disabled={isLoading}
               >
                 {isLoading ? "Signing in..." : "Sign in"}
               </Button>
             </form>
 
-            <div className="text-center text-sm text-purple-600">
+            <div className="text-center text-sm text-secondary">
               Don't have an account?{" "}
-              <Link to="/signup" className="text-purple-700 hover:underline font-medium">
+              <Link to="/signup" className="text-primary hover:underline font-medium">
                 Sign up
               </Link>
             </div>

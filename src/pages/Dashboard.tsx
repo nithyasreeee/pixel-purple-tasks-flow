@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <div className="flex">
         {/* Sidebar */}
         <Sidebar />
@@ -21,28 +21,28 @@ const Dashboard = () => {
         {/* Main Content */}
         <div className="flex-1 flex flex-col">
           {/* Header */}
-          <header className="bg-white border-b border-gray-200 px-6 py-4">
+          <header className="bg-card border-b border-border px-6 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
-                <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
+                <h1 className="text-2xl font-bold text-foreground animate-fade-in">Dashboard</h1>
               </div>
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-4 animate-scale-in">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                   <Input
                     placeholder="Search tasks..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10 w-64"
+                    className="pl-10 w-64 bg-background border-border"
                   />
                 </div>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" className="hover:bg-secondary/20">
                   <Filter className="h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" className="hover:bg-secondary/20">
                   <Bell className="h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" className="hover:bg-secondary/20">
                   <Settings className="h-4 w-4" />
                 </Button>
               </div>
@@ -50,58 +50,58 @@ const Dashboard = () => {
           </header>
 
           {/* Dashboard Content */}
-          <main className="flex-1 p-6">
+          <main className="flex-1 p-6 animate-fade-in">
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-              <Card>
+              <Card className="hover-lift animate-scale-in">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Total Tasks</CardTitle>
-                  <CheckSquare className="h-4 w-4 text-muted-foreground" />
+                  <CheckSquare className="h-4 w-4 text-primary" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">24</div>
-                  <p className="text-xs text-muted-foreground">+2 from yesterday</p>
+                  <div className="text-2xl font-bold text-primary">24</div>
+                  <p className="text-xs text-secondary">+2 from yesterday</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="hover-lift animate-scale-in" style={{ animationDelay: "0.1s" }}>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">In Progress</CardTitle>
-                  <CheckSquare className="h-4 w-4 text-muted-foreground" />
+                  <CheckSquare className="h-4 w-4 text-secondary" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">8</div>
+                  <div className="text-2xl font-bold text-secondary">8</div>
                   <p className="text-xs text-muted-foreground">Active tasks</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="hover-lift animate-scale-in" style={{ animationDelay: "0.2s" }}>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Completed</CardTitle>
-                  <CheckSquare className="h-4 w-4 text-muted-foreground" />
+                  <CheckSquare className="h-4 w-4 text-primary" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">12</div>
-                  <p className="text-xs text-muted-foreground">This week</p>
+                  <div className="text-2xl font-bold text-primary">12</div>
+                  <p className="text-xs text-secondary">This week</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="hover-lift animate-scale-in" style={{ animationDelay: "0.3s" }}>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Overdue</CardTitle>
-                  <CheckSquare className="h-4 w-4 text-muted-foreground" />
+                  <CheckSquare className="h-4 w-4 text-destructive" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">4</div>
-                  <p className="text-xs text-muted-foreground text-red-600">Needs attention</p>
+                  <div className="text-2xl font-bold text-destructive">4</div>
+                  <p className="text-xs text-destructive">Needs attention</p>
                 </CardContent>
               </Card>
             </div>
 
             {/* Tasks Section */}
-            <div className="space-y-6">
+            <div className="space-y-6 animate-slide-in">
               <div className="flex items-center justify-between">
-                <h2 className="text-xl font-semibold text-gray-900">Recent Tasks</h2>
+                <h2 className="text-xl font-semibold text-foreground">Recent Tasks</h2>
                 <Button 
                   onClick={() => setIsCreateDialogOpen(true)}
-                  className="bg-purple-600 hover:bg-purple-700"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground hover-lift"
                 >
                   <Plus className="h-4 w-4 mr-2" />
                   New Task
