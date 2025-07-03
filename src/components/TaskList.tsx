@@ -9,7 +9,8 @@ import {
   Calendar, 
   User,
   Clock,
-  AlertCircle
+  AlertCircle,
+  CheckSquare
 } from "lucide-react";
 import {
   DropdownMenu,
