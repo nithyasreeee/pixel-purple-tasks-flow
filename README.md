@@ -61,7 +61,7 @@ A full-stack real-time Todo Task Management Web App built during the Katomaran F
 
 ## 🧱 Architecture Diagram
 
-![Architecture Diagram](./assets/architecture-diagram.png)
+![Architecture Diagram](src/assets/architecture-diagram.png)
 
 ---
 
