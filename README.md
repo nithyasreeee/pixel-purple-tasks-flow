@@ -53,11 +53,7 @@ A full-stack real-time Todo Task Management Web App built during the Katomaran F
 🔗 **Click the link**: (https://pixel-purple-tasks-flow.lovable.app)
 ---
 
-## 📽️ Loom Video Demo
 
-🎥 [Click here to watch the demo](src/assets/pixel planner recording.mp4)
-
----
 
 ## 🧱 Architecture Diagram
 
@@ -71,3 +67,8 @@ A full-stack real-time Todo Task Management Web App built during the Katomaran F
    ```bash
    git clone https://github.com/nithyasreeee/pixel-purple-tasks-flow.git
    cd pixel-purple-tasks-flow
+
+📌 Final Notes
+This project is a part of a hackathon run by https://www.katomaran.com
+
+
