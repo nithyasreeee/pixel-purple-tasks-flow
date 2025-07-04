@@ -55,7 +55,7 @@ A full-stack real-time Todo Task Management Web App built during the Katomaran F
 
 ## 📽️ Loom Video Demo
 
-🎥 [Click here to watch the app demo]()
+🎥 [Click here to watch the demo](src/assets/pixel planner recording.mp4)
 
 ---
 
